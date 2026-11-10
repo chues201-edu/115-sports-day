@@ -620,6 +620,23 @@ a.entry:hover .go svg { transform: translateX(4px); }
   font-size: 13px;
   color: rgba(255, 255, 255, .66);
 }
+.stat .unit {
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, .55);
+  margin-left: 3px;
+  letter-spacing: 0;
+}
+.stat .stat-meta {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(255, 255, 255, .16);
+  font-size: 12.5px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, .55);
+  font-variant-numeric: tabular-nums;
+}
 
 /* ───────────────────────── 時間軸（當天流程） ───────────────────────── */
 .timeline {
