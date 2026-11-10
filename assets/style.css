@@ -1055,6 +1055,28 @@ table.data.tracksched td:nth-child(2) { min-width: 220px; }
 }
 @media (max-width: 900px) { .record-grid { grid-template-columns: 1fr; } }
 
+/* 分組標題（田徑賽分頁：男生組／女生組） */
+.record-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 12px;
+  margin: 0 0 14px;
+  font-size: 16.5px;
+  font-weight: 800;
+  letter-spacing: -.01em;
+  color: var(--ink);
+  padding-left: 12px;
+  border-left: 3px solid var(--coral);
+}
+.record-group span {
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--muted-2);
+}
+.record-grid + .record-group { margin-top: 32px; }
+
 .record-card {
   position: relative;
   padding: 22px 24px;
