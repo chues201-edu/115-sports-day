@@ -638,6 +638,27 @@ a.entry:hover .go svg { transform: translateX(4px); }
   font-variant-numeric: tabular-nums;
 }
 
+/* 紀錄之最：速度／耐力分組標籤 */
+.stat-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 0 0 16px;
+  font-size: 12.5px;
+  font-weight: 800;
+  letter-spacing: .18em;
+  color: var(--gold);
+}
+.stat-divider::before,
+.stat-divider::after {
+  content: "";
+  height: 1px;
+  width: 46px;
+  background: rgba(255, 255, 255, .18);
+}
+.stat-divider--gap { margin-top: 32px; }
+
 /* ───────────────────────── 時間軸（當天流程） ───────────────────────── */
 .timeline {
   position: relative;
