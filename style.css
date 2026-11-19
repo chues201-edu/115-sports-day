@@ -952,6 +952,24 @@ table.data.tracksched td:nth-child(2) { min-width: 220px; }
   color: var(--muted-2);
   margin-bottom: 12px;
 }
+.list-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 16px;
+  margin-bottom: 10px;
+}
+.list-bar .result-note { margin-bottom: 0; }
+.summary-links { display: inline-flex; flex-wrap: wrap; gap: 4px 18px; }
+.summary-link {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--coral-dark);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.summary-link:hover { color: var(--coral); }
 .empty {
   padding: 44px 20px;
   text-align: center;
