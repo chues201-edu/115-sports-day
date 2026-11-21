@@ -1602,3 +1602,26 @@ table.data.final-table td.name { font-weight: 700; font-size: 15.5px; }
 .final-head .tag { font-size: 13px; padding: 3px 11px; }
 table.data.final-table th:nth-child(2) { width: 96px; }
 table.data.final-table td.cls { color: var(--muted); font-weight: 600; }
+/* 平紀錄 */
+table.data.meet tr.is-tie { background: #f2f8ff; }
+table.data.meet tr.is-tie td:first-child { background: #f2f8ff; }
+.badge-record.is-tie { color: #0b4f8a; background: #e2f0ff; border-color: #b9dcff; }
+table.data.record-table tr.is-tie td { background: #f7fbff; }
+.meet-prelim {
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.meet-prelim::before {
+  content: "預賽";
+  display: inline-block;
+  margin-right: 8px;
+  padding: 1px 7px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 800;
+  color: #0b4f8a;
+  background: #e2f0ff;
+  border: 1px solid #b9dcff;
+}
