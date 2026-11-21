@@ -829,6 +829,7 @@ table.data.summary td.event { font-weight: 700; }
 table.data.summary td.name { font-weight: 600; }
 table.data.summary td.time { font-size: 15px; }
 table.data.summary .u { font-size: 12px; font-weight: 600; color: var(--muted-2); margin-left: 3px; }
+table.data.summary td.num { white-space: normal; }  /* 並列紀錄有兩個日期，允許換行 */
 table.data tr.is-past td { color: var(--muted-2); }
 table.data tr.is-highlight { background: #fff9ec; }
 table.data tr.is-highlight:hover { background: #fff5df; }
@@ -1602,6 +1603,15 @@ table.data.final-table td.name { font-weight: 700; font-size: 15.5px; }
 .final-head .tag { font-size: 13px; padding: 3px 11px; }
 table.data.final-table th:nth-child(2) { width: 96px; }
 table.data.final-table td.cls { color: var(--muted); font-weight: 600; }
+/* 平板直式雙欄（卡片較窄）時縮小前兩欄與留白，讓姓名維持一行；
+   min-width: 0（上面那條）不可拿掉，否則表格會撐出卡片、姓名被右側卡片蓋住 */
+@media screen and (min-width: 641px) and (max-width: 760px) {
+  table.data.final-table th,
+  table.data.final-table td { padding: 12px 12px; }
+  table.data.final-table th:nth-child(1) { width: 68px; }
+  table.data.final-table th:nth-child(2) { width: 78px; }
+  table.data.final-table td.name { font-size: 14.5px; }
+}
 /* 平紀錄 */
 table.data.meet tr.is-tie { background: #f2f8ff; }
 table.data.meet tr.is-tie td:first-child { background: #f2f8ff; }
