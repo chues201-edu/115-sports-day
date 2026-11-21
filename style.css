@@ -818,7 +818,7 @@ table.data .sub {
   margin-top: 3px;
 }
 
-/* 成績總表 */
+/* 紀錄總表（results.html） */
 table.data.summary { table-layout: fixed; min-width: 720px; }
 table.data.summary th:nth-child(1) { width: 26%; }
 table.data.summary th:nth-child(2) { width: 12%; }
@@ -1463,3 +1463,142 @@ table.data.tracksched td:nth-child(2) { min-width: 220px; }
 @media (max-width: 640px) {
   .scroll-hint { display: block; }
 }
+
+/* ─────────────── 本屆成績（results-115.html） ─────────────── */
+.meet-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  margin-top: 18px;
+  font-size: 13px;
+}
+.meet-legend > span { display: inline-flex; align-items: center; gap: 7px; }
+
+.meet-block { margin-top: 30px; }
+.section-head + .meet-block { margin-top: 18px; }
+
+.meet-event {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 12px;
+  padding-left: 13px;
+  border-left: 3px solid var(--coral);
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+table.data.meet { width: 100%; min-width: 560px; table-layout: fixed; }
+table.data.meet th:nth-child(1) { width: 76px; }
+table.data.meet th:nth-child(2) { width: 104px; }
+table.data.meet th:nth-child(3) { width: 132px; }
+table.data.meet th:nth-child(4) { width: 92px; }
+table.data.meet th:nth-child(5) { width: 148px; }
+table.data.meet.meet-team th:nth-child(2) { width: auto; }
+table.data.meet.meet-team th:nth-child(3) { width: 148px; }
+table.data.meet.meet-team th:nth-child(4) { width: auto; }
+table.data.meet.meet-nomark th:nth-child(1) { width: 110px; }
+table.data.meet.meet-nomark th:nth-child(2) { width: auto; }
+table.data.meet.meet-nomark th:nth-child(3) { width: auto; }
+table.data.meet td.place { font-family: var(--mono); font-weight: 800; white-space: nowrap; }
+table.data.meet td.name { font-weight: 600; }
+table.data.meet td.note { font-size: 13px; color: var(--muted); }
+table.data.meet td.is-empty { color: var(--muted-2); font-weight: 500; }
+table.data.meet td.place.is-empty { font-weight: 600; }
+table.data.meet .u { font-size: 12px; font-weight: 600; color: var(--muted-2); margin-left: 3px; }
+table.data.meet tr.is-record { background: #fff9ec; }
+table.data.meet tr.is-record:hover { background: #fff5df; }
+table.data.meet tr.is-record td:first-child { background: #fff9ec; }
+
+.badge-record {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 8px;
+  padding: 1px 7px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 800;
+  color: #7a1f0d;
+  background: #ffe4dc;
+  border: 1px solid #ffc3b3;
+  vertical-align: 1px;
+}
+
+/* 本屆破紀錄匯總 */.record-callout {
+  border: 1px solid #ffd0a8;
+  background: linear-gradient(180deg, #fffaf0, #fffdfa);
+  border-radius: var(--radius);
+  padding: 20px 22px 8px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-sm);
+}
+.record-callout h2 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  font-size: 19px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+.record-callout h2 .badge-record { margin-left: 0; }
+.record-callout .rc-note {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+table.data.record-table { width: 100%; min-width: 0; }
+table.data.record-table th:nth-child(1) { width: 160px; }
+table.data.record-table th:nth-child(4) { width: 140px; }
+table.data.record-table th:nth-child(5) { width: 84px; }
+table.data.record-table td.rv-event { font-weight: 700; }
+table.data.meet tr.is-record-heat { background: #fff4ee; }
+table.data.meet tr.is-record-heat td:first-child { background: #fff4ee; }
+
+@media (max-width: 640px) {
+  table.data.meet { min-width: 520px; }
+  table.data.meet th:nth-child(1) { width: 58px; }
+  table.data.meet th:nth-child(2) { width: 76px; }
+  table.data.meet th:nth-child(3) { width: 92px; }
+  table.data.meet th:nth-child(4) { width: 68px; }
+  table.data.meet th:nth-child(5) { width: 96px; }
+  table.data.meet th,
+  table.data.meet td { padding: 10px 8px; font-size: 13px; }
+  .meet-event { font-size: 15.5px; }
+  table.data.record-table { min-width: 420px; }
+  table.data.record-table th:nth-child(1) { width: 110px; }
+  .record-callout { padding: 16px 14px 4px; }
+}
+
+@media print {
+  table.data.meet { min-width: 0; }
+  table.data.meet td.note { font-size: 9pt; }
+  .meet-event { margin-top: 12pt; padding-left: 8pt; border-left-width: 2pt; font-size: 11pt; }
+  .badge-record { border-color: #999; }
+  .meet-legend { display: none; }
+  .record-callout { break-inside: avoid; border-color: #bbb; }
+}
+
+
+/* ─────────────── 決賽名單（finalists.html） ─────────────── */
+table.data.final-table { width: 100%; min-width: 0; }
+table.data.final-table th:nth-child(1) { width: 84px; }
+table.data.final-table td.lane {
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+  font-weight: 800;
+  color: var(--muted);
+}
+table.data.final-table td.name { font-weight: 700; font-size: 15.5px; }
+@media print {
+  table.data.final-table { min-width: 0; }
+  table.data.final-table td.name { font-size: 11pt; }
+}
+.card.final-card { padding: 18px 20px 8px; }
+.final-head { margin: 0 0 6px; }
+.final-head .tag { font-size: 13px; padding: 3px 11px; }
+table.data.final-table th:nth-child(2) { width: 96px; }
+table.data.final-table td.cls { color: var(--muted); font-weight: 600; }
