@@ -1,20 +1,37 @@
 <!DOCTYPE html>
-<html lang="zh-Hant-TW">
+<html lang="zh-Hant-TW" class="no-js">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>中湖國小 115 學年度運動會｜98 週年校慶暨社區聯合運動會</title>
 <meta name="description" content="新北市鶯歌區中湖國小 115 學年度 98 週年校慶暨社區運動會官方網站：賽程總覽、當天活動流程、會前賽時間表、大會最佳紀錄查詢。12 月 5 日（六）上午 8 時開幕。">
-<meta name="theme-color" content="#0c1524">
+<meta name="theme-color" content="#070c15">
 <meta property="og:title" content="中湖國小 115 學年度運動會">
 <meta property="og:description" content="12/05（六）08:00 開幕｜賽程、活動流程、會前賽時間表、大會最佳紀錄。">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%230c1524'/%3E%3Cpath d='M14 42h36' stroke='%23ff5a3c' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M18 30h28' stroke='%23ffb703' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M23 18h18' stroke='%2312a46b' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="assets/style.css">
-<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+<link rel="stylesheet" href="assets/home.css">
+<script>
+(function () {
+  var d = document.documentElement;
+  d.classList.remove("no-js");
+  d.classList.add("js-motion");
+  /* 保險：3.5 秒內動畫沒啟動，就把內容直接顯示，不留下空白頁 */
+  window.setTimeout(function () {
+    if (!d.classList.contains("motion-ready") && !d.classList.contains("motion-off")) {
+      d.classList.remove("js-motion");
+      d.classList.add("motion-off");
+    }
+  }, 3500);
+})();
+</script>
+<noscript><style>[data-reveal],[data-hero-fade],.hero-title .ht-inner,.hero-side,.hero-foot{opacity:1!important;visibility:visible!important;transform:none!important}</style></noscript>
 </head>
-<body>
+<body class="home-v2">
 <a class="skip-link" href="#main">跳至主要內容</a>
+
+<div class="scroll-progress" aria-hidden="true"><span data-progress></span></div>
 
 <header class="site-header">
   <div class="header-inner">
@@ -42,17 +59,45 @@
 
 <main id="main">
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <span class="eyebrow"><span class="dot" aria-hidden="true"></span>新北市鶯歌區中湖國民小學</span>
-        <h1>115 學年度<br><span class="accent">學校暨社區聯合運動會</span></h1>
-        <p class="lede">
+  <!-- ═══════════ HERO ═══════════ -->
+  <section class="hero hero--v2" data-hero aria-labelledby="hero-title">
+    <div class="hero-bg" aria-hidden="true">
+      <span class="glow glow--coral"></span>
+      <span class="glow glow--green"></span>
+      <span class="glow glow--blue"></span>
+      <div class="track">
+        <div class="track-wrap">
+          <div class="track-plane">
+            <span class="lane" style="--x:0%"></span>
+            <span class="lane" style="--x:16.667%"></span>
+            <span class="lane" style="--x:33.333%"></span>
+            <span class="lane" style="--x:50%"></span>
+            <span class="lane" style="--x:66.667%"></span>
+            <span class="lane" style="--x:83.333%"></span>
+            <span class="lane" style="--x:100%"></span>
+            <span class="track-start"></span>
+            <span class="track-finish"></span>
+          </div>
+        </div>
+      </div>
+      <span class="hero-num">115</span>
+      <span class="hero-98">98<small>週年</small></span>
+      <span class="grain"></span>
+    </div>
+
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <span class="eyebrow" data-hero-fade><span class="dot"></span>新北市鶯歌區中湖國民小學</span>
+        <h1 class="hero-title" id="hero-title">
+          <span class="ht-line"><span class="ht-inner">115 學年度</span></span>
+          <span class="ht-line"><span class="ht-inner">學校暨社區</span></span>
+          <span class="ht-line"><span class="ht-inner ht-accent">聯合運動會</span></span>
+        </h1>
+        <p class="lede" data-hero-fade>
           98 週年校慶，全校親師生與社區一起上場。從會前賽、兩次預演到 12 月 5 日的正式大會，
           所有賽程、流程與大會紀錄，都整理在這個網站裡。
         </p>
-        <div class="hero-meta">
+        <div class="hero-meta" data-hero-fade>
           <span class="chip-meta">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 11h18"/></svg>
             <b>115.12.05</b>（六）08:00 開幕
@@ -62,7 +107,7 @@
             中湖國小操場（內／外操場）
           </span>
         </div>
-        <div class="hero-actions">
+        <div class="hero-actions" data-hero-fade>
           <a class="btn btn-primary" href="schedule.html">
             查看賽程
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
@@ -72,26 +117,36 @@
         </div>
       </div>
 
-      <div class="countdown-card" data-countdown data-target="2026-12-05T08:00:00+08:00">
-        <div class="cc-label">
-          <span>距離開幕</span>
-          <span class="cc-badge" data-cc-badge>倒數中</span>
+      <div class="hero-side">
+        <div class="countdown-card" data-countdown data-target="2026-12-05T08:00:00+08:00">
+          <div class="cc-label">
+            <span>距離開幕</span>
+            <span class="cc-badge" data-cc-badge>倒數中</span>
+          </div>
+          <div class="cc-digits" role="timer" aria-label="距離開幕時間倒數">
+            <div class="cc-unit"><b data-cc-days>--</b><span>天</span></div>
+            <div class="cc-unit"><b data-cc-hours>--</b><span>時</span></div>
+            <div class="cc-unit"><b data-cc-mins>--</b><span>分</span></div>
+            <div class="cc-unit"><b data-cc-secs>--</b><span>秒</span></div>
+          </div>
+          <div class="cc-date">
+            <span>開幕典禮 · 司令台前</span>
+            <b>12/05 08:25</b>
+          </div>
         </div>
-        <div class="cc-digits" role="timer" aria-label="距離開幕時間倒數">
-          <div class="cc-unit"><b data-cc-days>--</b><span>天</span></div>
-          <div class="cc-unit"><b data-cc-hours>--</b><span>時</span></div>
-          <div class="cc-unit"><b data-cc-mins>--</b><span>分</span></div>
-          <div class="cc-unit"><b data-cc-secs>--</b><span>秒</span></div>
-        </div>
-        <div class="cc-date">
-          <span>開幕典禮 · 司令台前</span>
-          <b>12/05 08:25</b>
-        </div>
+        <p class="hero-note">98 週年 · 全校親師生與社區一起上場</p>
+      </div>
+    </div>
+
+    <div class="hero-foot">
+      <div class="wrap hero-foot-inner">
+        <span class="scroll-cue"><span class="scroll-cue-line" aria-hidden="true"></span>向下滾動</span>
+        <span class="hero-tag">TRACK &amp; FIELD · 2026.12.05</span>
       </div>
     </div>
   </section>
 
-  <!-- 賽程調整公告 -->
+  <!-- ═══════════ 公告 ═══════════ -->
   <section class="alertbar" aria-label="賽程調整公告">
     <div class="wrap alertbar-inner">
       <span class="alertbar-label">公告</span>
@@ -103,56 +158,60 @@
     </div>
   </section>
 
-  <!-- 快速入口 -->
-  <section class="section section--paper">
+  <!-- ═══════════ 快速查詢 ═══════════ -->
+  <section class="section quick" id="quick">
     <div class="wrap">
-      <div class="section-head reveal">
+      <div class="section-head" data-reveal>
         <span class="kicker">快速查詢</span>
         <h2>四件事，一次看懂</h2>
         <p>不論你是導師、選手、家長或社區來賓，從這裡開始找你要的資訊。</p>
       </div>
 
-      <div class="grid grid-4">
-        <a class="card entry reveal" data-tone="coral" href="schedule.html#dayof">
-          <span class="icon" aria-hidden="true">
-            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></svg>
+      <div class="quick-grid">
+        <a class="quick-card" data-tone="coral" data-reveal href="schedule.html#dayof">
+          <span class="quick-no" aria-hidden="true">01</span>
+          <span class="quick-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></svg>
           </span>
           <h3>運動會當天流程</h3>
           <p>12/05 從上學、進場、開幕、社團表演到競賽與閉幕，逐時段整理。</p>
-          <span class="go">看當天流程
+          <span class="quick-go">看當天流程
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
           </span>
         </a>
 
-        <a class="card entry reveal" data-tone="green" href="schedule.html#prelim">
-          <span class="icon" aria-hidden="true">
-            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 11h18"/><path d="m9 16 2 2 4-4"/></svg>
+        <a class="quick-card" data-tone="green" data-reveal href="schedule.html#prelim">
+          <span class="quick-no" aria-hidden="true">02</span>
+          <span class="quick-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 11h18"/><path d="m9 16 2 2 4-4"/></svg>
           </span>
           <h3>會前賽與預演</h3>
           <p>10/27 起的大會舞、健康操練習，到預賽、決賽與兩次全校預演（12/01、12/03）。</p>
-          <span class="go">看時間表
+          <span class="quick-go">看時間表
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
           </span>
         </a>
 
-        <a class="card entry reveal" data-tone="blue" href="records.html">
-          <span class="icon" aria-hidden="true">
-            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0V4Z"/><path d="M17 5h3v2a3 3 0 0 1-3 3"/><path d="M7 5H4v2a3 3 0 0 0 3 3"/></svg>
+        <a class="quick-card" data-tone="blue" data-reveal href="records.html">
+          <span class="quick-no" aria-hidden="true">03</span>
+          <span class="quick-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0V4Z"/><path d="M17 5h3v2a3 3 0 0 1-3 3"/><path d="M7 5H4v2a3 3 0 0 0 3 3"/></svg>
           </span>
           <h3>運動會最佳紀錄</h3>
           <p>校運會 70 項（含 800 公尺跑走、立定跳遠），另有 41 項校外田徑賽紀錄。</p>
-          <span class="go">查紀錄
+          <span class="quick-go">查紀錄
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
           </span>
         </a>
 
-        <a class="card entry reveal" data-tone="violet" href="info.html">
-          <span class="icon" aria-hidden="true">
-            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg>
+        <a class="quick-card" data-tone="violet" data-reveal href="info.html">
+          <span class="quick-no" aria-hidden="true">04</span>
+          <span class="quick-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg>
           </span>
           <h3>競賽規則與參賽資訊</h3>
           <p>接力規則、進場說明、開閉幕程序、雨天備案與工作團隊。</p>
-          <span class="go">看規則
+          <span class="quick-go">看規則
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
           </span>
         </a>
@@ -160,180 +219,291 @@
     </div>
   </section>
 
-  <!-- 當天流程精華 -->
-  <section class="section section--white" id="flow">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="kicker">12 月 5 日（六）</span>
-        <h2>當天的節奏</h2>
-        <p>上午 7:20 學生上學、8:25 開幕，9:30 起進入運動競賽，11:40 閉幕頒獎。下午為教學成果展示。</p>
-      </div>
+  <!-- ═══════════ 當天流程 ═══════════ -->
+  <section class="section flow" id="flow" data-flow>
+    <div class="wrap flow-layout">
+      <aside class="flow-aside">
+        <div class="flow-sticky">
+          <span class="kicker">12 月 5 日（六）</span>
+          <h2>當天的<br>節奏</h2>
+          <p class="flow-lede">
+            上午 7:20 學生上學、8:25 開幕，9:30 起進入運動競賽，11:40 閉幕頒獎。下午為教學成果展示。
+          </p>
+          <div class="flow-clock">
+            <b>07:20</b><i aria-hidden="true">→</i><b>12:30</b>
+            <span>司令台前 · 操場</span>
+          </div>
+          <a class="btn btn-dark" href="schedule.html#dayof">完整流程與競賽賽程
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+          </a>
+        </div>
+      </aside>
 
-      <div class="timeline">
-        <div class="tl-row reveal">
-          <div class="tl-time">07:20<small>– 07:50</small></div>
-          <div class="tl-body">
-            <h3>學生上學與整潔時間</h3>
-            <p>崗哨就位、全校環境整理，各班在教室完成最後準備。</p>
-          </div>
-        </div>
-        <div class="tl-row reveal">
-          <div class="tl-time">08:00<small>– 08:25</small></div>
-          <div class="tl-body">
-            <h3>大會迎賓、運動會預備與進場 <span class="tag tag-key">重點</span></h3>
-            <p>校門口報到接待來賓<span class="sep">·</span>會旗、聖火、射箭準備<span class="sep">·</span>各班於預備區集結<span class="sep">·</span>全校依序進場</p>
-          </div>
-        </div>
-        <div class="tl-row reveal">
-          <div class="tl-time">08:25<small>– 08:45</small></div>
-          <div class="tl-body">
-            <h3>開幕典禮</h3>
-            <p>唱國歌、會旗進場與升會旗、介紹來賓、主席與家長會長致詞、運動員宣誓、射箭、點聖火。</p>
-          </div>
-        </div>
-        <div class="tl-row reveal">
-          <div class="tl-time">08:50<small>– 09:30</small></div>
-          <div class="tl-body">
-            <h3>社團與年級表演</h3>
-            <p>一～四年級健康操<span class="sep">·</span>幼兒園表演<span class="sep">·</span>太極拳<span class="sep">·</span>扯鈴社<span class="sep">·</span>五、六年級大會舞</p>
-          </div>
-        </div>
-        <div class="tl-row reveal">
-          <div class="tl-time">09:30<small>– 11:40</small></div>
-          <div class="tl-body">
-            <h3>運動競賽 <span class="tag tag-key">主場</span></h3>
-            <p>低年級大家跑、中年級與高年級 100 公尺決賽、幼兒園親子趣味競賽、中年級混合接力、高年級異程接力、全校青黃接力、校友接力。</p>
-          </div>
-        </div>
-        <div class="tl-row reveal">
-          <div class="tl-time">11:40<small>– 12:30</small></div>
-          <div class="tl-body">
-            <h3>環境整理與閉幕典禮</h3>
-            <p>11:40 起環境整理、12:00 班級整隊，接續頒獎、主席致詞暨講評、禮成（唱校歌）。</p>
-          </div>
-        </div>
-        <div class="tl-row reveal">
-          <div class="tl-time">12:30<small>– 16:00</small></div>
-          <div class="tl-body">
-            <h3>教學成果展示</h3>
-            <p>於展覽室／美勞館展出，歡迎家長與社區來賓參觀。</p>
-          </div>
-        </div>
-      </div>
-
-      <p class="footnote">時間依《115 學年度運動會實施計畫》附件二整理，現場如遇天候或流程調整，以司儀廣播為準。</p>
-      <div style="margin-top:22px">
-        <a class="btn btn-primary" href="schedule.html#dayof">完整流程與競賽賽程</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 競賽項目 -->
-  <section class="section section--paper">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="kicker">競賽項目</span>
-        <h2>九個項目，三種舞台</h2>
-        <p>外操場進行徑賽與接力，內操場為表演與幼兒園親子趣味競賽；部分項目已於會前賽完成決賽。</p>
-      </div>
-
-      <div class="grid grid-3">
-        <article class="card reveal">
-          <span class="tag tag-lower">低年級</span>
-          <h3 style="margin-top:10px">60 公尺大家跑</h3>
-          <p>一、二年級全班一起跑，人人有獎。體育課練習、運動會當天登場。</p>
-        </article>
-        <article class="card reveal">
-          <span class="tag tag-junior">中年級</span>
-          <h3 style="margin-top:10px">100 公尺決賽</h3>
-          <p>11/16（一）預賽、12/05 當天決賽。每班男、女童組各至多 6 名選手。</p>
-        </article>
-        <article class="card reveal">
-          <span class="tag tag-senior">高年級</span>
-          <h3 style="margin-top:10px">100 公尺決賽</h3>
-          <p>11/16（一）預賽、12/05 當天決賽。每班男、女童組各至多 6 名選手。</p>
-        </article>
-        <article class="card reveal">
-          <span class="tag tag-kinder">幼兒園</span>
-          <h3 style="margin-top:10px">親子趣味競賽</h3>
-          <p>10:10–10:30 於操場中間場地，現場報名、以有報名者為主，親子合作接力。</p>
-        </article>
-        <article class="card reveal">
-          <span class="tag tag-junior">中年級</span>
-          <h3 style="margin-top:10px">男女混合接力</h3>
-          <p>每隊 4 人（2 男 2 女），每人半圈、總距離 400 公尺，最多 6 賽道。</p>
-        </article>
-        <article class="card reveal">
-          <span class="tag tag-senior">高年級</span>
-          <h3 style="margin-top:10px">異程接力</h3>
-          <p>男、女分組，每隊 4 人，棒次 0.5／1／1.5／2 圈，總距離 1000 公尺。</p>
-        </article>
-        <article class="card reveal">
-          <span class="tag tag-all">全校</span>
-          <h3 style="margin-top:10px">青黃接力</h3>
-          <p>一～六年級混合、分 6 組，單數棒男、雙數棒女，跨年級接力。</p>
-        </article>
-        <article class="card reveal">
-          <span class="tag tag-all">校友</span>
-          <h3 style="margin-top:10px">校友接力賽</h3>
-          <p>11:20–11:40 於操場跑道，歷屆校友組隊回娘家同場競技。</p>
-        </article>
-        <article class="card reveal">
-          <span class="tag tag-soon">會前賽</span>
-          <h3 style="margin-top:10px">田賽與長跑</h3>
-          <p>立定跳遠（全校）、壘球擲遠（5–6 年級）、800 公尺（4–6 年級）、迷你馬拉松。</p>
-        </article>
+      <div class="flow-main">
+        <div class="flow-rail" aria-hidden="true"><span class="flow-rail-fill" data-flow-fill></span></div>
+        <ol class="flow-list">
+          <li class="flow-row" data-reveal>
+            <div class="flow-time"><b>07:20</b><small>– 07:50</small></div>
+            <div class="flow-body">
+              <h3>學生上學與整潔時間</h3>
+              <p>崗哨就位、全校環境整理，各班在教室完成最後準備。</p>
+            </div>
+          </li>
+          <li class="flow-row" data-reveal>
+            <div class="flow-time"><b>08:00</b><small>– 08:25</small></div>
+            <div class="flow-body">
+              <h3>大會迎賓、運動會預備與進場 <span class="tag tag-key">重點</span></h3>
+              <p>校門口報到接待來賓<span class="sep">·</span>會旗、聖火、射箭準備<span class="sep">·</span>各班於預備區集結<span class="sep">·</span>全校依序進場</p>
+            </div>
+          </li>
+          <li class="flow-row" data-reveal>
+            <div class="flow-time"><b>08:25</b><small>– 08:45</small></div>
+            <div class="flow-body">
+              <h3>開幕典禮</h3>
+              <p>唱國歌、會旗進場與升會旗、介紹來賓、主席與家長會長致詞、運動員宣誓、射箭、點聖火。</p>
+            </div>
+          </li>
+          <li class="flow-row" data-reveal>
+            <div class="flow-time"><b>08:50</b><small>– 09:30</small></div>
+            <div class="flow-body">
+              <h3>社團與年級表演</h3>
+              <p>一～四年級健康操<span class="sep">·</span>幼兒園表演<span class="sep">·</span>太極拳<span class="sep">·</span>扯鈴社<span class="sep">·</span>五、六年級大會舞</p>
+            </div>
+          </li>
+          <li class="flow-row" data-reveal>
+            <div class="flow-time"><b>09:30</b><small>– 11:40</small></div>
+            <div class="flow-body">
+              <h3>運動競賽 <span class="tag tag-key">主場</span></h3>
+              <p>低年級大家跑、中年級與高年級 100 公尺決賽、幼兒園親子趣味競賽、中年級混合接力、高年級異程接力、全校青黃接力、校友接力。</p>
+            </div>
+          </li>
+          <li class="flow-row" data-reveal>
+            <div class="flow-time"><b>11:40</b><small>– 12:30</small></div>
+            <div class="flow-body">
+              <h3>環境整理與閉幕典禮</h3>
+              <p>11:40 起環境整理、12:00 班級整隊，接續頒獎、主席致詞暨講評、禮成（唱校歌）。</p>
+            </div>
+          </li>
+          <li class="flow-row" data-reveal>
+            <div class="flow-time"><b>12:30</b><small>– 16:00</small></div>
+            <div class="flow-body">
+              <h3>教學成果展示</h3>
+              <p>於展覽室／美勞館展出，歡迎家長與社區來賓參觀。</p>
+            </div>
+          </li>
+        </ol>
+        <p class="footnote">時間依《115 學年度運動會實施計畫》附件二整理，現場如遇天候或流程調整，以司儀廣播為準。</p>
       </div>
     </div>
   </section>
 
-  <!-- 數據 -->
-  <section class="section section--ink">
+  <!-- ═══════════ 競賽項目（橫向捲動） ═══════════ -->
+  <section class="events" id="events" data-events aria-labelledby="events-title">
+    <div class="events-viewport">
+      <div class="events-top">
+        <div class="events-top-inner">
+          <div>
+            <span class="kicker kicker--gold">競賽項目</span>
+            <h2 id="events-title">九個項目，三種舞台</h2>
+          </div>
+          <p class="events-hint">
+            <span class="events-hint-line" aria-hidden="true"></span>
+            往下滾，橫著看
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+          </p>
+        </div>
+      </div>
+
+      <div class="events-window">
+        <div class="events-track" data-events-track>
+          <article class="ev-card">
+            <span class="ev-no" aria-hidden="true">01</span>
+            <span class="tag tag-lower">低年級</span>
+            <h3>60 公尺大家跑</h3>
+            <p>一、二年級全班一起跑，人人有獎。體育課練習、運動會當天登場。</p>
+            <span class="ev-meta">一、二年級 · 全班參與</span>
+          </article>
+          <article class="ev-card">
+            <span class="ev-no" aria-hidden="true">02</span>
+            <span class="tag tag-junior">中年級</span>
+            <h3>100 公尺決賽</h3>
+            <p>11/16（一）預賽、12/05 當天決賽。每班男、女童組各至多 6 名選手。</p>
+            <span class="ev-meta">外操場 · 12/05 09:30 起</span>
+          </article>
+          <article class="ev-card">
+            <span class="ev-no" aria-hidden="true">03</span>
+            <span class="tag tag-senior">高年級</span>
+            <h3>100 公尺決賽</h3>
+            <p>11/16（一）預賽、12/05 當天決賽。每班男、女童組各至多 6 名選手。</p>
+            <span class="ev-meta">外操場 · 12/05 09:30 起</span>
+          </article>
+          <article class="ev-card">
+            <span class="ev-no" aria-hidden="true">04</span>
+            <span class="tag tag-kinder">幼兒園</span>
+            <h3>親子趣味競賽</h3>
+            <p>10:10–10:30 於操場中間場地，現場報名、以有報名者為主，親子合作接力。</p>
+            <span class="ev-meta">內操場 · 10:10</span>
+          </article>
+          <article class="ev-card">
+            <span class="ev-no" aria-hidden="true">05</span>
+            <span class="tag tag-junior">中年級</span>
+            <h3>男女混合接力</h3>
+            <p>每隊 4 人（2 男 2 女），每人半圈、總距離 400 公尺，最多 6 賽道。</p>
+            <span class="ev-meta">外操場 · 400 公尺</span>
+          </article>
+          <article class="ev-card">
+            <span class="ev-no" aria-hidden="true">06</span>
+            <span class="tag tag-senior">高年級</span>
+            <h3>異程接力</h3>
+            <p>男、女分組，每隊 4 人，棒次 0.5／1／1.5／2 圈，總距離 1000 公尺。</p>
+            <span class="ev-meta">外操場 · 1000 公尺</span>
+          </article>
+          <article class="ev-card">
+            <span class="ev-no" aria-hidden="true">07</span>
+            <span class="tag tag-all">全校</span>
+            <h3>青黃接力</h3>
+            <p>一～六年級混合、分 6 組，單數棒男、雙數棒女，跨年級接力。</p>
+            <span class="ev-meta">外操場 · 全校</span>
+          </article>
+          <article class="ev-card">
+            <span class="ev-no" aria-hidden="true">08</span>
+            <span class="tag tag-all">校友</span>
+            <h3>校友接力賽</h3>
+            <p>11:20–11:40 於操場跑道，歷屆校友組隊回娘家同場競技。</p>
+            <span class="ev-meta">外操場 · 11:20</span>
+          </article>
+          <article class="ev-card">
+            <span class="ev-no" aria-hidden="true">09</span>
+            <span class="tag tag-soon">會前賽</span>
+            <h3>田賽與長跑</h3>
+            <p>立定跳遠（全校）、壘球擲遠（5–6 年級）、800 公尺（4–6 年級）、迷你馬拉松。</p>
+            <span class="ev-meta">11/16–11/30 · 已陸續完成</span>
+          </article>
+        </div>
+      </div>
+
+      <div class="events-bottom">
+        <div class="events-bottom-inner">
+          <div class="events-progress" aria-hidden="true"><span data-events-bar></span></div>
+          <span class="events-count">09 EVENTS · 01 — 09</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ 大會數字 ═══════════ -->
+  <section class="section stats" id="numbers">
+    <div class="marquee" data-marquee aria-hidden="true">
+      <div class="marquee-inner">
+        <span>98 週年校慶</span><i>·</i><span>115 學年度</span><i>·</i><span>12.05 開幕</span><i>·</i><span>中湖國小</span><i>·</i><span>跑道見</span><i>·</i>
+        <span>98 週年校慶</span><i>·</i><span>115 學年度</span><i>·</i><span>12.05 開幕</span><i>·</i><span>中湖國小</span><i>·</i><span>跑道見</span><i>·</i>
+      </div>
+    </div>
+
     <div class="wrap">
-      <div class="section-head center reveal">
-        <span class="kicker">大會數字</span>
+      <div class="section-head center" data-reveal>
+        <span class="kicker kicker--gold">大會數字</span>
         <h2>98 週年的運動會</h2>
       </div>
-      <div class="grid grid-4">
-        <div class="stat reveal"><b>98</b><span>週年校慶</span></div>
-        <div class="stat reveal"><b>9</b><span>競賽項目</span></div>
-        <div class="stat reveal"><b>70</b><span>大會最佳紀錄</span></div>
-        <div class="stat reveal"><b>18</b><span>會前賽與預演的日期</span></div>
+      <div class="stat-grid">
+        <div class="stat-card" data-reveal>
+          <b data-count="98">98</b>
+          <span>週年校慶</span>
+          <p>115 學年度，中湖創校 98 週年。</p>
+        </div>
+        <div class="stat-card" data-reveal>
+          <b data-count="9">9</b>
+          <span>競賽項目</span>
+          <p>徑賽、田賽、接力與趣味競賽，從 60 公尺到 1000 公尺。</p>
+        </div>
+        <div class="stat-card" data-reveal>
+          <b data-count="70">70</b>
+          <span>大會最佳紀錄</span>
+          <p>校運會 70 項，另收錄田徑賽 41 項校外紀錄。</p>
+        </div>
+        <div class="stat-card" data-reveal>
+          <b data-count="18">18</b>
+          <span>會前賽與預演的日期</span>
+          <p>10/27 到 12/04，賽前每一天都有人上場。</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 重要時程 -->
-  <section class="section section--white">
+  <!-- ═══════════ 重要時程 ═══════════ -->
+  <section class="section dates" id="dates">
     <div class="wrap">
-      <div class="section-head reveal">
+      <div class="section-head" data-reveal>
         <span class="kicker">重要時程</span>
         <h2>大會前，還有這些日子</h2>
         <p>預賽自 11/16 起連續兩週進行，預演安排在 12/01（二）、12/03（四），12/04（五）為預備日。</p>
       </div>
-      <div class="grid grid-4">
-        <a class="card reveal" href="schedule.html#events">
-          <span class="kicker" style="letter-spacing:.1em">預賽期間</span>
-          <h3 style="margin-top:8px;font-family:var(--mono);font-size:20px">11/16 起 · 連續兩週</h3>
+
+      <div class="date-grid">
+        <a class="date-card" data-reveal href="schedule.html#events">
+          <div class="date-top">
+            <span class="date-kicker">預賽期間</span>
+            <span class="date-dow">WEEK 1–2</span>
+          </div>
+          <b class="date-big">11/16<span>起</span></b>
           <p>個人徑賽 60M、100M 預賽（11/16），決賽 60M（<strong>11/30 08:00</strong> 早自習，原 11/24 起因雨兩度改期）、800M（11/27）、壘球擲遠（11/20）、立定跳遠（11/27、11/30）。</p>
+          <span class="date-eta" data-eta="2026-11-16"></span>
         </a>
-        <a class="card reveal" href="schedule.html#prelim">
-          <span class="kicker" style="letter-spacing:.1em">全校預演</span>
-          <h3 style="margin-top:8px;font-family:var(--mono);font-size:20px">12/01（二）08:30</h3>
+
+        <a class="date-card" data-reveal href="schedule.html#prelim">
+          <div class="date-top">
+            <span class="date-kicker">全校預演 · 第 1 次</span>
+            <span class="date-dow">TUE</span>
+          </div>
+          <b class="date-big">12/01<span>（二）</span></b>
           <p>第 1 次預演，全校 08:30–10:00；當天下午另安排混合接力與異程接力練習。</p>
+          <span class="date-eta" data-eta="2026-12-01"></span>
         </a>
-        <a class="card reveal" href="schedule.html#prelim">
-          <span class="kicker" style="letter-spacing:.1em">全校預演</span>
-          <h3 style="margin-top:8px;font-family:var(--mono);font-size:20px">12/03（四）08:10</h3>
+
+        <a class="date-card" data-reveal href="schedule.html#prelim">
+          <div class="date-top">
+            <span class="date-kicker">全校預演 · 第 2 次</span>
+            <span class="date-dow">THU</span>
+          </div>
+          <b class="date-big">12/03<span>（四）</span></b>
           <p>第 2 次預演 08:10–09:15；09:25–10:05 三～六年級各項接力備案。</p>
+          <span class="date-eta" data-eta="2026-12-03"></span>
         </a>
-        <a class="card reveal" href="schedule.html#prelim">
-          <span class="kicker" style="letter-spacing:.1em">預備日 · 視情況</span>
-          <h3 style="margin-top:8px;font-family:var(--mono);font-size:20px">12/04（五）08:30</h3>
+
+        <a class="date-card" data-reveal href="schedule.html#prelim">
+          <div class="date-top">
+            <span class="date-kicker">預備日 · 視情況</span>
+            <span class="date-dow">FRI</span>
+          </div>
+          <b class="date-big">12/04<span>（五）</span></b>
           <p>第 3 次預演（視情況）08:30–10:00；當日亦為各項預賽最後備案時間。</p>
+          <span class="date-eta" data-eta="2026-12-04"></span>
         </a>
       </div>
     </div>
+  </section>
+
+  <!-- ═══════════ 結尾 ═══════════ -->
+  <section class="outro" id="outro" aria-labelledby="outro-title">
+    <div class="outro-bg" aria-hidden="true">
+      <span class="outro-line" style="--y:18%"></span>
+      <span class="outro-line" style="--y:34%"></span>
+      <span class="outro-line" style="--y:50%"></span>
+      <span class="outro-line" style="--y:66%"></span>
+      <span class="outro-line" style="--y:82%"></span>
+    </div>
+    <div class="wrap outro-inner">
+      <span class="kicker kicker--gold">12 月 5 日（六）08:00 開幕</span>
+      <p class="outro-big" id="outro-title">司令台前見<span class="outro-dot">。</span></p>
+      <p class="outro-lede">從會前賽到閉幕，所有賽程、流程與成績都在網站裡；當天帶著手機，就能查到每一項比賽。</p>
+      <div class="outro-actions">
+        <a class="btn btn-primary" href="schedule.html">查看完整賽程
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="results-115.html">本屆成績</a>
+      </div>
+    </div>
+    <span class="outro-num" aria-hidden="true">12.05</span>
   </section>
 
 </main>
@@ -370,6 +540,9 @@
   </div>
 </footer>
 
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
 <script src="assets/app.js"></script>
+<script src="assets/home.js"></script>
 </body>
 </html>

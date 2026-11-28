@@ -1,16 +1,33 @@
 <!DOCTYPE html>
-<html lang="zh-Hant-TW">
+<html lang="zh-Hant-TW" class="no-js">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>本屆成績｜中湖國小 115 學年度運動會</title>
 <meta name="description" content="中湖國小 115 學年度運動會本屆成績，依低、中、高年級男女共 6 組分頁，列出各項目前 6 名、成績與破紀錄標記；另列跨年段 800M、團體接力與不排名項目。">
-<meta name="theme-color" content="#0c1524">
+<meta name="theme-color" content="#070c15">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%230c1524'/%3E%3Cpath d='M14 42h36' stroke='%23ff5a3c' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M18 30h28' stroke='%23ffb703' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M23 18h18' stroke='%2312a46b' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/pages.css">
+<script>
+(function () {
+  var d = document.documentElement;
+  d.classList.remove("no-js");
+  d.classList.add("js-motion");
+  /* 保險：3.5 秒內動畫沒啟動，就把內容直接顯示 */
+  window.setTimeout(function () {
+    if (!d.classList.contains("motion-ready") && !d.classList.contains("motion-off")) {
+      d.classList.remove("js-motion");
+      d.classList.add("motion-off");
+    }
+  }, 3500);
+})();
+</script>
 </head>
-<body>
+<body class="page-v2">
 <a class="skip-link" href="#main">跳至主要內容</a>
+
+<div class="scroll-progress" aria-hidden="true"><span data-progress></span></div>
 
 <header class="site-header">
   <div class="header-inner">
@@ -39,6 +56,7 @@
 <main id="main">
 
   <section class="page-hero">
+    <span class="page-no" aria-hidden="true">05</span>
     <div class="wrap">
       <nav class="breadcrumb" aria-label="麵包屑">
         <a href="index.html">首頁</a><span class="sep">/</span><span>本屆成績</span>
@@ -61,6 +79,7 @@
       <div class="record-callout">
         <h2><span class="badge-record">破紀錄</span>本屆破紀錄 3 筆、平紀錄 1 筆</h2>
         <p class="rc-note">預賽與決賽成績均列入認定；同一項目以較優成績為新紀錄，成績相同記為平紀錄。</p>
+        <p class="scroll-hint">表格可左右滑動</p>
         <div class="table-wrap">
           <table class="data record-table">
             <thead><tr><th>組別</th><th>項目</th><th>選手</th><th>成績</th><th>輪次</th></tr></thead>
@@ -614,6 +633,9 @@
   </div>
 </footer>
 
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
 <script src="assets/app.js"></script>
+<script src="assets/pages.js"></script>
 </body>
 </html>

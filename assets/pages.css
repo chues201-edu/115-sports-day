@@ -1,0 +1,487 @@
+@charset "UTF-8";
+/* =========================================================
+   中湖國小 115 學年度運動會
+   pages.css — 內頁共用新版視覺（首頁以外的 6 頁）
+   只影響 body.page-v2；首頁用 home.css
+   ========================================================= */
+
+.page-v2 {
+  --wrap: 1200px;
+}
+
+.page-v2 .wrap { max-width: var(--wrap); }
+
+/* 進場動畫由 JS 控制；關掉 JS 或減少動態時內容直接顯示 */
+html.js-motion .page-v2 .page-hero .breadcrumb,
+html.js-motion .page-v2 .page-hero h1,
+html.js-motion .page-v2 .page-hero > .wrap > p,
+html.js-motion .page-v2 .page-hero .anchor-nav,
+html.js-motion .page-v2 .page-hero .meet-legend,
+html.js-motion .page-v2 .page-no { opacity: 0; }
+
+/* ───────────────────── 進度條 ───────────────────── */
+.page-v2 .scroll-progress {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 2px;
+  z-index: 130;
+  background: rgba(255, 255, 255, .05);
+  pointer-events: none;
+}
+.page-v2 .scroll-progress span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--coral), var(--gold));
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+/* ───────────────────── Header ───────────────────── */
+.page-v2 .site-header {
+  background: rgba(7, 12, 21, .78);
+  border-bottom-color: rgba(255, 255, 255, .07);
+  transition: background .3s ease, box-shadow .3s ease;
+}
+.page-v2 .site-header.is-scrolled {
+  background: rgba(6, 10, 18, .95);
+  box-shadow: 0 18px 40px -30px #000;
+}
+
+/* ───────────────────── 內頁頁首 ───────────────────── */
+.page-v2 .page-hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  padding: clamp(52px, 7.2vw, 92px) 0 clamp(46px, 6vw, 78px);
+  border-bottom: 1px solid rgba(255, 255, 255, .08);
+  background:
+    radial-gradient(50% 72% at 92% -12%, rgba(255, 90, 60, .32), transparent 62%),
+    radial-gradient(44% 62% at 0% 122%, rgba(18, 164, 107, .13), transparent 62%),
+    linear-gradient(168deg, #070c15 0%, #0d1728 58%, #080f1c 100%);
+}
+
+/* 跑道平面 */
+.page-v2 .page-hero::before {
+  content: "";
+  position: absolute;
+  left: -14%;
+  right: -14%;
+  bottom: -52%;
+  height: 100%;
+  transform: perspective(720px) rotateX(63deg) rotateZ(-5deg);
+  transform-origin: 50% 100%;
+  border-top: 1px solid rgba(255, 255, 255, .13);
+  background:
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, .12) 0 1px, transparent 1px 16.6667%),
+    linear-gradient(180deg, rgba(255, 183, 3, .03), rgba(255, 90, 60, .06));
+  pointer-events: none;
+}
+
+/* 顆粒 */
+.page-v2 .page-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: .18;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+  background-size: 160px 160px;
+  pointer-events: none;
+}
+
+/* 關掉 style.css 的舊進場動畫，改用 GSAP 控制，避免兩套動畫互相覆蓋 */
+.page-v2 .page-hero .wrap > * { animation: none !important; }
+
+.page-v2 .page-hero .wrap {
+  position: relative;
+  z-index: 2;
+}
+
+.page-no {
+  position: absolute;
+  right: -1%;
+  top: 0;
+  z-index: 0;
+  font-family: var(--mono);
+  font-weight: 900;
+  font-size: clamp(160px, 24vw, 360px);
+  line-height: .74;
+  letter-spacing: -.08em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, .15);
+  pointer-events: none;
+  user-select: none;
+}
+
+.page-v2 .page-hero h1 {
+  margin-top: 16px;
+  font-size: clamp(36px, 5.4vw, 66px);
+  line-height: 1.06;
+  letter-spacing: -.035em;
+  font-weight: 900;
+}
+.page-v2 .page-hero h1::before {
+  content: "";
+  display: block;
+  width: 46px;
+  height: 3px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, var(--coral), var(--gold));
+}
+.page-v2 .page-hero > .wrap > p {
+  margin-top: 18px;
+  text-wrap: pretty;
+  max-width: 46em;
+  font-size: clamp(14.5px, 1.3vw, 16.5px);
+  line-height: 1.9;
+  color: rgba(255, 255, 255, .7);
+}
+
+.page-v2 .breadcrumb {
+  gap: 8px;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  color: rgba(255, 255, 255, .46);
+}
+.page-v2 .breadcrumb a { color: rgba(255, 255, 255, .62); }
+.page-v2 .breadcrumb a:hover { color: var(--gold); }
+.page-v2 .breadcrumb .sep { opacity: .38; }
+
+.page-v2 .anchor-nav { margin-top: 26px; gap: 8px; }
+.page-v2 .anchor-nav a {
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, .78);
+  background: rgba(255, 255, 255, .055);
+  border: 1px solid rgba(255, 255, 255, .13);
+  transition: background .18s ease, color .18s ease, border-color .18s ease, transform .18s ease;
+}
+.page-v2 .anchor-nav a:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--ink);
+  transform: translateY(-1px);
+}
+
+.page-v2 .meet-legend {
+  margin-top: 24px;
+  gap: 10px 22px;
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, .66);
+}
+.page-v2 .meet-legend .medal { width: 22px; height: 22px; }
+
+/* ───────────────────── 段落 ───────────────────── */
+.page-v2 .section { padding: clamp(54px, 7vw, 96px) 0; }
+.page-v2 .section-head {
+  max-width: 48em;
+  margin-bottom: clamp(24px, 3.4vw, 40px);
+}
+.page-v2 .section-head h2 {
+  margin-top: 10px;
+  font-size: clamp(27px, 3.3vw, 42px);
+  line-height: 1.2;
+  letter-spacing: -.03em;
+}
+.page-v2 .section-head p {
+  margin-top: 12px;
+  text-wrap: pretty;
+  font-size: 15px;
+  line-height: 1.9;
+}
+.page-v2 .kicker { font-size: 12px; letter-spacing: .16em; }
+
+.page-v2 .section--ink {
+  background:
+    radial-gradient(60% 50% at 88% 0%, rgba(255, 90, 60, .14), transparent 62%),
+    radial-gradient(50% 40% at 6% 100%, rgba(47, 107, 255, .14), transparent 64%),
+    #080e18;
+  border-top: 1px solid rgba(255, 255, 255, .07);
+  border-bottom: 1px solid rgba(255, 255, 255, .07);
+}
+.page-v2 .section--ink .section-head h2 { color: #fff; }
+
+/* ───────────────────── 卡片 ───────────────────── */
+.page-v2 .card {
+  padding: clamp(22px, 2.5vw, 28px);
+  border-radius: 20px;
+  border-color: #e6e0d3;
+}
+.page-v2 a.card:hover {
+  border-color: #d6cec0;
+  box-shadow: 0 26px 44px -34px rgba(12, 21, 36, .5);
+}
+.page-v2 .card h3 { font-size: 18px; letter-spacing: -.01em; }
+
+/* 決賽名單卡 */
+.page-v2 .final-card { overflow: hidden; }
+.page-v2 .final-card .final-head { margin-bottom: 2px; }
+.page-v2 .final-table { min-width: 0; }
+.page-v2 .final-table th { font-size: 11px; }
+.page-v2 .final-table td { padding: 10px 12px; }
+
+/* ───────────────────── 公告 ───────────────────── */
+.page-v2 .notice {
+  padding: 18px 20px 18px 18px;
+  border-radius: 16px;
+  border: 1px solid #ffe2ab;
+  border-left: 3px solid var(--gold);
+  background: linear-gradient(180deg, #fffaf0, #fff7e6);
+  color: #6b4a00;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, .04);
+}
+
+/* ───────────────────── 分頁 / 篩選 ───────────────────── */
+.page-v2 .tabs {
+  gap: 4px;
+  padding: 5px;
+  border-radius: 16px;
+  background: #ece8df;
+  border-color: #e0dacd;
+}
+.page-v2 .tab {
+  padding: 11px 17px;
+  border-radius: 11px;
+  font-size: 13.5px;
+}
+.page-v2 .tab[aria-selected="true"] {
+  color: var(--ink);
+  background: #fff;
+  box-shadow: inset 0 -2px 0 var(--gold), 0 2px 6px rgba(16, 24, 40, .08);
+}
+.page-v2 .toolbar { gap: 12px; }
+.page-v2 .chip {
+  padding: 8px 15px;
+  background: #fff;
+  border-color: #e2dccd;
+}
+.page-v2 .chip:hover { border-color: #cfc6b4; background: #fffdf8; }
+.page-v2 .chip[aria-pressed="true"] {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+.page-v2 .btn-inline {
+  background: #fff;
+  border-color: #e2dccd;
+}
+.page-v2 .btn-inline:hover { border-color: #cfc6b4; background: #fffdf8; }
+.page-v2 .search input {
+  background: #fff;
+  border-color: #e2dccd;
+}
+.page-v2 .search input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(255, 183, 3, .2);
+}
+.page-v2 .empty {
+  border-radius: 18px;
+  background: #fff;
+}
+
+/* ───────────────────── 表格 ───────────────────── */
+.page-v2 .table-wrap {
+  border-radius: 18px;
+  border-color: #e6e0d3;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, .04), 0 20px 44px -38px rgba(12, 21, 36, .45);
+}
+.page-v2 table.data { font-size: 14px; }
+.page-v2 table.data th,
+.page-v2 table.data td { padding: 12px 16px; }
+.page-v2 table.data thead th {
+  color: #6a7686;
+  font-size: 11.5px;
+  letter-spacing: .09em;
+  background: #f6f2e9;
+  border-bottom: 1px solid #e2dbcb;
+}
+.page-v2 table.data tbody tr:hover { background: #fffdf7; }
+.page-v2 table.data tbody tr.is-highlight { background: #fff8e8; }
+.page-v2 table.data tbody tr.is-highlight:hover { background: #fff3d8; }
+.page-v2 table.data thead th:first-child { background: #f6f2e9; }
+.page-v2 table.data tbody tr td:first-child { background: #fff; }
+.page-v2 table.data tbody tr:hover td:first-child { background: #fffdf7; }
+.page-v2 table.data tbody tr.is-highlight td:first-child { background: #fff8e8; }
+.page-v2 table.data td.time,
+.page-v2 table.data td.num { font-weight: 800; }
+.page-v2 table.data caption { color: var(--muted-2); }
+
+/* ───────────────────── 賽程／紀錄卡 ───────────────────── */
+.page-v2 .day {
+  border-radius: 18px;
+  border-color: #e6e0d3;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, .04);
+}
+.page-v2 .day-head { background: linear-gradient(180deg, #fdfcf9, #f7f4ed); }
+.page-v2 .day-date { border-radius: 12px; }
+.page-v2 .day.is-today {
+  border-color: #ffd166;
+  box-shadow: 0 0 0 3px rgba(255, 183, 3, .14), 0 16px 30px -24px rgba(12, 21, 36, .4);
+}
+
+.page-v2 .record-card {
+  border-radius: 18px;
+  border-color: #e6e0d3;
+  transition: transform .28s cubic-bezier(.2, .7, .3, 1), box-shadow .28s ease, border-color .28s ease;
+}
+.page-v2 .record-card::before { width: 3px; }
+.page-v2 .record-card:hover {
+  transform: translateY(-3px);
+  border-color: #d8d0c1;
+  box-shadow: 0 26px 42px -32px rgba(12, 21, 36, .45);
+}
+.page-v2 .record-card .rc-event { letter-spacing: .1em; }
+.page-v2 .record-card .rc-time { font-size: clamp(28px, 3vw, 34px); }
+.page-v2 .record-card .rc-holder { font-size: 15.5px; }
+
+.page-v2 .record-group {
+  font-size: 18px;
+  padding-left: 14px;
+  border-left-width: 3px;
+}
+
+/* ───────────────────── 統計／KV／Prose ───────────────────── */
+.page-v2 .stat {
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .012));
+  border-color: rgba(255, 255, 255, .12);
+}
+.page-v2 .stat b { font-size: clamp(30px, 4.2vw, 44px); }
+.page-v2 .stat-divider { color: rgba(255, 255, 255, .55); }
+
+.page-v2 .kv div {
+  border-radius: 14px;
+  background: #fff;
+  border-color: #e6e0d3;
+}
+
+.page-v2 .prose h3 {
+  padding-left: 13px;
+  border-left: 3px solid var(--gold);
+  font-size: 18px;
+}
+.page-v2 .prose p,
+.page-v2 .prose li { font-size: 15px; }
+
+.page-v2 .record-callout {
+  padding: clamp(20px, 2.4vw, 26px);
+  border-radius: 20px;
+  border-color: #ffd9a8;
+  background: linear-gradient(180deg, #fffaf0, #fff4dd);
+  box-shadow: 0 1px 2px rgba(16, 24, 40, .04);
+}
+
+.page-v2 .meet-block { margin-top: 34px; }
+.page-v2 .meet-event { font-size: 18px; }
+
+.page-v2 .timeline .tl-row { padding: 20px 0; }
+.page-v2 .timeline .tl-time { font-size: 15.5px; }
+
+/* ───────────────────── Footer ───────────────────── */
+.page-v2 .site-footer {
+  border-top: 1px solid rgba(255, 255, 255, .08);
+  background:
+    radial-gradient(60% 80% at 90% 0%, rgba(255, 90, 60, .1), transparent 62%),
+    #080e18;
+}
+
+.page-v2 .to-top { background: #0c1524; }
+.page-v2 .to-top:hover { background: var(--coral); }
+
+/* ───────────────────── 響應式 ───────────────────── */
+@media (max-width: 900px) {
+  .page-v2 .page-hero { padding-top: clamp(42px, 8vw, 62px); }
+  .page-v2 .page-hero h1 { font-size: clamp(30px, 7.4vw, 46px); }
+  .page-no { font-size: 40vw; right: -6%; top: 6%; }
+}
+
+@media (max-width: 640px) {
+  /* 破紀錄匯總表在手機上維持可讀寬度，改為左右滑動 */
+  .page-v2 table.data.record-table { min-width: 620px; }
+  .page-v2 .record-callout { padding: 18px 16px 8px; }
+}
+
+@media (max-width: 640px) {
+  .page-v2 .section { padding: 58px 0; }
+  .page-v2 .page-hero { padding-bottom: 40px; }
+  .page-v2 .page-hero h1::before { width: 36px; margin-bottom: 16px; }
+  .page-v2 .page-hero > .wrap > p { font-size: 14.5px; }
+  .page-v2 .anchor-nav a { font-size: 12px; padding: 7px 13px; }
+  .page-v2 .section-head h2 { font-size: 26px; }
+  .page-v2 .breadcrumb { font-size: 11px; }
+  .page-no { font-size: 48vw; opacity: .8; }
+  .page-v2 .tabs { flex-direction: column; }
+  .page-v2 .tab { width: 100%; text-align: left; }
+}
+
+/* ───────────────────── 列印 ───────────────────── */
+@media print {
+  .page-v2 .scroll-progress,
+  .page-v2 .page-no,
+  .page-v2 .page-hero::before,
+  .page-v2 .page-hero::after,
+  .page-v2 .site-header,
+  .page-v2 .to-top { display: none !important; }
+  .page-v2 .page-hero,
+  .page-v2 .section--ink {
+    padding: 0 0 12pt !important;
+    background: #fff !important;
+    color: #000 !important;
+    border: 0 !important;
+  }
+  .page-v2 .page-hero h1,
+  .page-v2 .page-hero > .wrap > p,
+  .page-v2 .breadcrumb,
+  .page-v2 .breadcrumb a { color: #000 !important; }
+  .page-v2 .page-hero h1::before { background: #000 !important; height: 2px; }
+  .page-v2 .anchor-nav,
+  .page-v2 .meet-legend { display: none !important; }
+  .page-v2 .section-head h2,
+  .page-v2 .section-head p { color: #000 !important; }
+  .page-v2 .card,
+  .page-v2 .record-card,
+  .page-v2 .day,
+  .page-v2 .table-wrap,
+  .page-v2 .stat,
+  .page-v2 .notice,
+  .page-v2 .kv div,
+  .page-v2 .record-callout {
+    box-shadow: none !important;
+    border-color: #bbb !important;
+    background: #fff !important;
+  }
+  .page-v2 .stat b,
+  .page-v2 .stat span,
+  .page-v2 .stat .unit { color: #000 !important; }
+  .page-v2 .record-card::before { background: #999 !important; }
+  .page-v2 table.data thead th { background: #eee !important; color: #000 !important; }
+  .page-v2 [data-reveal],
+  .page-v2 .section-head,
+  .page-v2 .notice,
+  .page-v2 .card,
+  .page-v2 .record-card,
+  .page-v2 .day,
+  .page-v2 .final-card,
+  .page-v2 .meet-block,
+  .page-v2 .record-group,
+  .page-v2 .record-callout,
+  .page-v2 .toolbar,
+  .page-v2 .kv > div,
+  .page-v2 .prose > h3,
+  .page-v2 .page-hero .breadcrumb,
+  .page-v2 .page-hero h1,
+  .page-v2 .page-hero > .wrap > p,
+  .page-v2 .page-hero .anchor-nav,
+  .page-v2 .page-hero .meet-legend,
+  .page-v2 .page-no {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
+}
